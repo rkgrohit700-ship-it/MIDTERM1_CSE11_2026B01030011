@@ -81,8 +81,22 @@ curl http://localhost:3000/api/books/1
 curl "http://localhost:3000/api/books/search?q=hobbit"
 curl -X POST http://localhost:3000/api/books/1/issue
 curl -X POST http://localhost:3000/api/books/1/return
+curl -X DELETE http://localhost:3000/api/books/1
 ```
 
-Use the corresponding `PUT` and `DELETE` methods on `/api/books/:id` to edit
-and remove a book. Invalid input returns `400`, missing books return `404`,
-and operations that conflict with copy availability return `409`.
+## Tasks 5–7: delete, search, issue, and return
+
+- **Delete a book:** `DELETE /api/books/:id`. The API returns `404` if the book
+  does not exist. A book with copies currently issued cannot be deleted and
+  returns `409`.
+- **Search books:** `GET /api/books/search?q=hobbit`. Search is
+  case-insensitive and checks the title, author, and ISBN. The response
+  includes the matching-book count and list.
+- **Issue a copy:** `POST /api/books/:id/issue`. Each request issues one copy;
+  the available-copy count decreases by one. If no copies are available, the
+  API returns `409`.
+- **Return a copy:** `POST /api/books/:id/return`. Each request returns one
+  copy; the available-copy count increases by one. If no copies are currently
+  issued, the API returns `409`.
+
+Invalid input returns `400`, and requests for missing books return `404`.
