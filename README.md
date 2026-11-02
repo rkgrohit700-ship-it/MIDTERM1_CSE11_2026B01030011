@@ -9,7 +9,7 @@ not use a database, MongoDB, Mongoose, React, or authentication.
 ## Folder structure
 
 ```text
-midterm1/
+MIDTERM1_CSE11_2026B01030011/
 ├── src/
 │   ├── app.js
 │   ├── server.js
@@ -19,8 +19,6 @@ midterm1/
 │   │   └── books.js
 │   └── routes/
 │       └── bookRoutes.js
-├── MIDTERM1_CSE11_2026B01030011/
-│   └── README.md
 ├── .gitignore
 ├── package.json
 └── package-lock.json
@@ -28,7 +26,8 @@ midterm1/
 
 ## Setup and run
 
-Install dependencies and start the server:
+Clone the repository, open a terminal in the project folder, install
+dependencies, and start the server:
 
 ```bash
 npm install
